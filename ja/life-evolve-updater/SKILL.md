@@ -1,63 +1,76 @@
 ---
 name: life-evolve-updater-ja
-description: 日本語の life-evolve リポジトリを証拠から更新する。final.md, frontier.md, donelist.md, memory.md, soul.md, hobbies.md, progress.md、個人戦略、人生記憶、実績一覧、趣味から副業への可能性を日本語で保守するときに使う。日本語ネイティブのプロンプトで考え、三言語版の論理的一貫性を保つ。
+description: 証拠に基づいて日本語版 life-evolve リポジトリを保守する。final.md、bridge.md、frontier.md、donelist.md、memory.md、soul.md、hobbies.md、progress.md、個人戦略、人生の記憶、実績一覧、戦略から実行への橋渡し、趣味の副業化を扱う。日本語で直接記述し、三言語版の論理を揃える。
 ---
 
 # Life Evolve Updater - 日本語
 
-この skill は、日本語の `life-evolve` フォルダ、または多言語 `life-evolve` リポジトリの日本語版を更新するために使う。
-
-## Canonical Files
+## 基準ファイル
 
 - `final.md`: 長期戦略と現在の最終仮説。
-- `frontier.md`: frontier opportunity、外部地図、leverage point。
-- `donelist.md`: 証拠ベースの実績一覧。各 project に完成度を入れる。
-- `memory.md`: 人生 timeline、持続的な事実、biographical reconstruction。
-- `soul.md`: temperament、values、decision rules、operating constraints。
-- `hobbies.md`: 副業化し得る serious interests。
-- `progress.md`: repository と update system の完成度。
+- `bridge.md`: `final.md` と `donelist.md` の間に置かれる実行の橋。長期判断を、既存資産に基づく事業化ルート、実行優先度、検証指標、直近の行動へ変換する。深い作成や書き直しには `life-evolve-bridge` を使う。
+- `frontier.md`: 前線の機会、外部地図、技術やデータの活用点。
+- `donelist.md`: 証拠に基づく実績一覧。各プロジェクトに完成度を入れる。
+- `memory.md`: 人生の時系列、持続する事実、経歴の再構成。
+- `soul.md`: 気質、価値観、判断規則、運用上の制約。
+- `hobbies.md`: 副業化し得る本格的な関心。
+- `progress.md`: リポジトリと更新体系の完成度。
 
-## Native Prompt
+## 日本語プロンプト
 
 日本語ファイルを更新するときは、日本語で直接考えて書く:
 
 ```text
 この life-evolve フォルダを証拠から更新する。
-事実を守り、推測は推測として明記し、七つのファイルの一貫性を保つ。
-その人を一般的な productivity persona に平坦化しない。
-shipped work は completion percentage 付きの done-list にする。
-趣味は hobby-to-business optionality として評価する。
-人生記憶は美談ではなく、運用可能な memory に変換する。
+確認済みの事実を保ち、推測には「推測」と記す。
+八つのファイルの整合を保つ。
+本人固有の事実、経歴、判断を保つ。
+提供済みの成果を完成度付きの donelist に記録する。
+趣味が副業へ発展する可能性を評価する。
+人生の経歴を、将来の判断に使える運用記憶へ整理する。
 ```
 
-## Workflow
+## 作業手順
 
-1. まず日本語の七つのファイルを読む。
-2. 多言語 repo の場合、source-of-record の言語フォルダと照合する。
+1. まず日本語の八つのファイルを読む。
+2. 多言語リポジトリでは、正本となる言語フォルダと照合する。
 3. 編集前に証拠を集める:
-   - Git repositories と recent commits;
-   - README / package metadata;
-   - local memory files と notes;
-   - user-provided product status;
-   - 現在の外部状態が必要な場合だけ public pages。
-4. ファイルを system として更新する。
-5. `donelist.md` では major project / direction ごとに completion percentage と「なぜ 100% ではないか」を入れる。
-6. `progress.md` では repository maturity と project maturity を分ける。
-7. commit 前に privacy check を行う。
+   - Git リポジトリと最近のコミット;
+   - README とパッケージのメタデータ;
+   - ローカルの memory ファイルとノート;
+   - ユーザーが示した製品状態;
+   - 現在の外部状態が必要な場合だけ公開ページ。
+4. 更新のたびに八ファイルの関連項目を照合する。
+5. `final.md` または `donelist.md` が変わった場合、`bridge.md` に新規、昇格、降格、`hold`、`reject` の項目が必要か確認する。
+6. `donelist.md` の主要プロジェクトまたは方向ごとに、完成度、現在の証拠、100% までの閉ループ条件を書く。
+7. `progress.md` ではリポジトリの成熟度とプロジェクトの成熟度を分ける。
+8. コミット前にプライバシーを確認する。
 
-## Privacy
+## プライバシー
 
-public repo に raw chats、secrets、credentials、private database dumps、sensitive third-party data を入れない。private repo では、必要で証拠に基づく summary は許容される。
+公開リポジトリには、公開可能で匿名化済みの証拠要約を収録する。生の会話、秘密情報、認証情報、私有データベースのダンプ、第三者の機微情報は私有領域に置く。私有リポジトリには、作業に必要な証拠要約を収録できる。
 
-## Completion Percentages
+## 完成度
 
-- 0-20%: idea、research、placeholder、early notes。
-- 21-40%: prototype または planning repo がある。
-- 41-60%: working implementation はあるが product-ready ではない。
-- 61-80%: substantial product/system はあるが operation、users、packaging、hardening が必要。
-- 81-95%: launched または near-production。残りは operation、scale、monetization、polish。
-- 96-100%: users、revenue、retention、maintenance の閉ループ、または intentionally complete artifact。
+- 0-20%: 構想、調査、プレースホルダー、初期メモ。
+- 21-40%: 試作品または計画用リポジトリがある。
+- 41-60%: 動作する実装がある。次の閉ループは製品化。
+- 61-80%: 製品またはシステムの主要部が完成している。次の閉ループは運用、利用者、パッケージ化、堅牢化。
+- 81-95%: 公開済み、または本番稼働に近い。次の閉ループは運用、規模、収益化、仕上げ。
+- 96-100%: 利用者、収益、継続利用、保守の閉ループがある。または成果物が意図した範囲で完成している。
 
-## Output Standard
+## 記述基準
 
-変更ファイル、使用した証拠、completion percentage の変更、推測した事実、repo visibility、push status、残りの gap を報告する。
+- 各節の冒頭に、そのファイルの事実、判断、証拠、行動を書く。
+- 一文には一つの事実、推測、行動を置く。
+- 固有名、日付、パス、コミット、百分率、状態値、本人を識別する具体性を保つ。
+- 事実を証拠に結び付ける。真正な推測には「推測：」を付ける。証拠がない関係、または証拠の競合が未解決な関係の断定は一文ごと省く。競合自体が判断を変える場合は、出典付きの事実と差分を個別に記し、関係判断を補わない。
+- 各完成度を、現在の証拠と次の閉ループ条件に結び付ける。
+- 明示された文字量がある場合、本文を目標の 90%–110% に収める。目標がない場合、証拠を過不足なく収める最短の分量にする。
+- 調査過程、確認過程、一般的な免責の前置き、境界の前置き、言い直し、総括の定型句、感情的な埋め草、重複する限定、空のプレースホルダーを本文から省く。プライバシー、安全、法的境界が公開可能な内容または実行可能な行動を変える場合は、具体的な制約と許可された経路を直接記す。
+- 「注目すべき点」「指摘する必要がある」「要約すると」「言い換えると」「AIとして」「実際には」「基本的に」「簡単に言えば」「明らかに」「情報なし」「要調査」を省き、事実と行動を直接記す。
+- 提出前に、定型句、重複する限定、証拠のない断定、八ファイル、数値、プライバシー、三言語の論理を静かに照合する。照合過程は出力に含めない。
+
+## 出力基準
+
+変更ファイル、使用した証拠、完成度の変更、推測した事実、リポジトリの公開範囲、プッシュ状態、証拠のある残課題を報告する。

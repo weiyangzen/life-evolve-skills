@@ -3,6 +3,7 @@
 中文文件夹应包含：
 
 - `final.md`
+- `bridge.md`
 - `frontier.md`
 - `donelist.md`
 - `memory.md`
@@ -13,6 +14,8 @@
 每个文件应包含 `Last updated: YYYY-MM-DD` 或 `最后更新: YYYY-MM-DD`。
 
 `donelist.md` 必须包含项目完成度表。
+
+`bridge.md` 必须把 `final.md` 的长期判断连接到 `donelist.md` 的已有资产、近期验证动作、验收标准和失败信号。
 
 `progress.md` 必须区分仓库完成度和项目完成度。
 
