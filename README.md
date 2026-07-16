@@ -1,43 +1,43 @@
 # Life Evolve Skills
 
-Public multilingual skills for maintaining evidence-backed `life-evolve` repositories.
+Public multilingual skills for evidence-backed maintenance of `life-evolve` repositories.
 
-## Structure
+The repository root contains this README and the `zh/`, `en/`, and `ja/`
+language packages.
 
-The outer layer stays minimal:
+## Language Packages
 
-```text
-life-evolve-skills/
-├── README.md
-├── zh/
-├── en/
-└── ja/
-```
+Each package implements the same logic in its prompt language.
 
-Each language folder contains a native-language version of the updater skill:
-
-| Folder | Skill | Prompt Language |
+| Language | Updater | Bridge |
 |---|---|---|
-| `zh/` | `life-evolve-updater` | 中文 |
-| `en/` | `life-evolve-updater` | English |
-| `ja/` | `life-evolve-updater` | 日本語 |
+| 中文 | `zh/life-evolve-updater` | `zh/life-evolve-bridge` |
+| English | `en/life-evolve-updater` | `en/life-evolve-bridge` |
+| 日本語 | `ja/life-evolve-updater` | `ja/life-evolve-bridge` |
 
-The skills are logically aligned, but they are not simple line-by-line translations. Each one uses its native language as the working prompt language.
+## Updater
 
-## Current Skill
+`life-evolve-updater` maintains eight files:
 
-`life-evolve-updater` maintains:
+| File | Responsibility |
+|---|---|
+| `final.md` | Long-horizon personal strategy and current thesis |
+| `bridge.md` | Asset-backed routes from strategy to execution |
+| `frontier.md` | Frontier opportunities, technology maps, and leverage points |
+| `donelist.md` | Evidence-backed shipped work and per-project completion percentages |
+| `memory.md` | Life timeline and durable personal facts |
+| `soul.md` | Operating principles, values, and decision rules |
+| `hobbies.md` | Hobby-to-business optionality |
+| `progress.md` | Repository and update-system completion tracking |
 
-- `final.md`
-- `frontier.md`
-- `donelist.md`
-- `memory.md`
-- `soul.md`
-- `hobbies.md`
-- `progress.md`
+Updates preserve factual and logical alignment across languages while using native phrasing.
 
-It updates personal strategy, frontier maps, shipped work, life memory, operating principles, hobby-to-business optionality, and completion percentages from evidence.
+## Bridge
 
-## Privacy Rule
+`life-evolve-bridge` creates or updates `bridge.md`. It converts long-term concepts from `final.md` into executable plans grounded in `donelist.md` assets.
 
-This repository is public. Do not commit private life histories, raw chats, credentials, private repository scans, or user-specific evidence here.
+Each plan defines 90-day outputs, weekly actions, acceptance criteria, and kill criteria. Directions without an asset anchor or validation path receive a `downgrade`, `hold`, or `reject` decision.
+
+## Public Boundary
+
+Keep private life histories, raw chats, credentials, private repository scans, and user-specific evidence in private storage and outside this repository.
